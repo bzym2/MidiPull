@@ -15,10 +15,10 @@ logging.basicConfig(level=logging.DEBUG,
                         logging.FileHandler('midi_receiver.log')  # 输出到文件
                     ])
 
-class MidiReceiver:
+class MidiPull:
     def __init__(self, master):
         self.master = master
-        self.master.title("MIDI Receiver")
+        self.master.title("MIDIPull Application")
 
         self.running = False
         self.midi_in = None
@@ -78,5 +78,5 @@ class MidiReceiver:
 
 if __name__ == "__main__":
     root = tk.Tk()
-    app = MidiReceiver(root)
+    app = MidiPull(root)
     root.mainloop()
